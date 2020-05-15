@@ -7,7 +7,7 @@ const articlesRouter = require('./articles/articles-router')
 const commentsRouter = require('./comments/comments-router')
 const authRouter = require('./auth/auth-router')
 const usersRouter = require('./users/users-router')
-
+const carouselRouter = require('./carousel/carousel-router')
 const app = express()
 
 app.use(morgan((NODE_ENV === 'production') ? 'tiny' : 'common', {
@@ -17,6 +17,7 @@ app.use(cors())
 app.use(helmet())
 
 app.use('/api/articles', articlesRouter)
+app.use('/api/carousel', carouselRouter)
 app.use('/api/comments', commentsRouter)
 app.use('/api/auth', authRouter)
 app.use('/api/users', usersRouter)
