@@ -1,19 +1,20 @@
 const express = require('express')
-// const carpic1 = require('../images/1carousel.jpg')
 
 const carouselRouter = express.Router()
 
 carouselRouter.route('/')
 .get((req,res,next) =>{
 
-    const obj = {
-        img: carpic1,
-        details:'picture numero 1'
-
-    }
-
-    console.log('&&&&&&&&&&&&&&&&&&&&&&&&&')
- 
+    const imgArray = [
+    'https://s7.gifyu.com/images/6carousel.jpg',
+    'https://s7.gifyu.com/images/5carousel.jpg',
+    'https://s7.gifyu.com/images/4carousel.jpg',
+   'https://s7.gifyu.com/images/3carousel.jpg',
+    'https://s7.gifyu.com/images/2carousel.jpg',
+    'https://s7.gifyu.com/images/1carousel.jpg']
+   
+   
+ res.json(imgArray)
 
 
 })
