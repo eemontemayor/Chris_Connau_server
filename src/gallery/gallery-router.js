@@ -8,18 +8,36 @@ galleryRouter.route('/')
 
     // to do ::: return nested array
 
-    
+  
 
-    const imgArray = [
-    'https://s7.gifyu.com/images/6carousel.md.jpg',
-    'https://s7.gifyu.com/images/5carousel.md.jpg',
-    'https://s7.gifyu.com/images/4carousel.md.jpg',
-    'https://s7.gifyu.com/images/3carousel.md.jpg',
-    'https://s7.gifyu.com/images/2carousel.md.jpg',
-    'https://s7.gifyu.com/images/1carousel.md.jpg']
+    const categories = ['nature',
+    'architecture'
+]
+    const natureUrlArr = []
+    const architectureUrlArr=[]
    
-   console.log('imgArray from gall', imgArray)
- res.json(imgArray)
+
+    categories.forEach(item => makeUrl(item))
+
+    function makeUrl(type){
+        console.log('here',type)
+        let i = 1
+       while(i <=12 ){
+           if(type === 'nature'){
+
+               natureUrlArr.push(`https://s7.gifyu.com/images/${type}_${i}.th.jpg`)
+           }else if(type === 'architecture'){
+                architectureUrlArr.push(`https://s7.gifyu.com/images/${type}_${i}.th.jpg`)
+
+           }
+            i++
+       }
+
+    }
+    const imgUrlArray = [natureUrlArr, architectureUrlArr]
+   
+   console.log('imgArray from gall', imgUrlArray)
+ res.json(imgUrlArray)
 
 
 })
