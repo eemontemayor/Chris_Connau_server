@@ -6,7 +6,7 @@ galleryRouter.route('/')
 .get((req,res,next) =>{
 
 
-    // to do ::: return nested array
+
 
   
 
@@ -38,7 +38,19 @@ galleryRouter.route('/')
    
    console.log('imgArray from gall', imgUrlArray)
  res.json(imgUrlArray)
-
+    
 
 })
+
+
+galleryRouter.route('/picture/:id')
+.get((req,res,next) =>{
+    console.log('here')
+    let id = req.params.id
+    console.log('id', id)
+
+   const imgUrl =  `https://s7.gifyu.com/images/${id}.jpg`
+    res.json(imgUrl)
+})
+
 module.exports = galleryRouter

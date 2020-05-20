@@ -20,6 +20,7 @@ app.use(helmet())
 app.use('/api/articles', articlesRouter)
 app.use('/api/carousel', carouselRouter)
 app.use('/api/gallery', galleryRouter)
+
 app.use('/api/comments', commentsRouter)
 app.use('/api/auth', authRouter)
 app.use('/api/users', usersRouter)
