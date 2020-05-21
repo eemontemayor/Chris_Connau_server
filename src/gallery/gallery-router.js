@@ -43,13 +43,12 @@ galleryRouter.route('/')
 })
 
 
-galleryRouter.route('/picture/:id')
+galleryRouter.route('/:category/:id')
 .get((req,res,next) =>{
     console.log('here')
-    let id = req.params.id
-    console.log('id', id)
-
-   const imgUrl =  `https://s7.gifyu.com/images/${id}.jpg`
+    let {category,id} = req.params
+  
+   const imgUrl =  `https://s7.gifyu.com/images/${category}_${id}.jpg`
     res.json(imgUrl)
 })
 
