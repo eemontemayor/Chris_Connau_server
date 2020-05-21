@@ -1,9 +1,9 @@
 CREATE TYPE article_category AS ENUM (
-  'Listicle',
-  'How-to',
-  'News',
-  'Interview',
-  'Story'
+  'Nature',
+  'Architecture',
+  'Miscellanious',
+  'Masonry',
+  'Carousel'
 );
 
 ALTER TABLE blogful_articles

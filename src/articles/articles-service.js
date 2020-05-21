@@ -7,6 +7,7 @@ const ArticlesService = {
       .select(
         'art.id',
         'art.title',
+        'art.img_url',
         'art.date_created',
         'art.style',
         'art.content',
@@ -82,6 +83,7 @@ const ArticlesService = {
     return {
       id: article.id,
       style: article.style,
+      img_url:article.img_url,
       title: xss(article.title),
       content: xss(article.content),
       date_created: new Date(article.date_created),
