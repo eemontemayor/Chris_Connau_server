@@ -25,7 +25,22 @@ articlesRouter
       })
       .catch(next)
   })
+  .post((req, res, next) => {
+    ArticlesService.postNewArticle(req.app.get('db'))
+      .then(article => {
+    
 
+
+      
+        res.json(
+
+     
+       ArticlesService.serializeArticle(article)
+          
+          )
+      })
+      .catch(next)
+  })
 articlesRouter
   .route('/:article_id')
   // .all(requireAuth)
